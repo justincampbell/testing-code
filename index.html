@@ -1,0 +1,791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Testing Code</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="begin/01_begin/1">
+<h1>Testing Code</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="begin/01_begin/2">
+<h1>Testing Code</h1>
+
+<p>(in Ruby)</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="begin/01_begin/3">
+<h1>Testing Code</h1>
+
+<p>(in Ruby on Rails)</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="begin/01_begin/4">
+<h1>Testing Code</h1>
+
+<p>(in Ruby on Rails for .NET devs)</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="begin/01_begin/5">
+<h1>What?</h1>
+
+<ul>
+<li>Tests</li>
+<li>Continuous Integration (CI)</li>
+<li>Test-Driven Development</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="begin/01_begin/6">
+<h1>Why?</h1>
+
+<ul>
+<li>Prove stuff works</li>
+<li>Help you write better code</li>
+<li>Prevent you from breaking things</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="begin/01_begin/7">
+<h1>Fearless refactoring!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_tests/1">
+<h1>Tests</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_tests/2">
+<pre class="sh_ruby"><code>test "the truth" do
+  assert true
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_tests/3">
+<pre class="sh_ruby"><code>test "the truth" do
+  assert false
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/01_tests/4">
+<pre class="sh_ruby"><code>test "the truth" do
+  assert false
+end</code></pre>
+
+<p>==</p>
+
+<pre class="sh_shell"><code>Failure:
+test: the truth [dir/file_test:123]:
+&lt;false&gt; is not true.</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/1">
+<h1>Assertions</h1>
+
+<p>http://guides.rubyonrails.org/testing.html#assertions-available</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/2">
+<pre class="sh_ruby"><code>assert( boolean, [msg] )</code></pre>
+
+<p>Ensures that the object/expression is true.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/3">
+<pre class="sh_ruby"><code>assert_equal( obj1, obj2, [msg] )</code></pre>
+
+<p>Ensures that obj1 == obj2 is true.</p>
+
+<pre class="sh_ruby"><code>assert_not_equal( obj1, obj2, [msg] )</code></pre>
+
+<p>Ensures that obj1 == obj2 is false.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/4">
+<pre class="sh_ruby"><code>assert_same( obj1, obj2, [msg] )</code></pre>
+
+<p>Ensures that obj1.equal?(obj2) is true.
+&#x2028;</p>
+
+<pre class="sh_ruby"><code>assert_not_same( obj1, obj2, [msg] )</code></pre>
+
+<p>Ensures that obj1.equal?(obj2) is false.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/5">
+<pre class="sh_ruby"><code>assert_nil( obj, [msg] )</code></pre>
+
+<p>Ensures that obj.nil? is true.
+&#x2028;</p>
+
+<pre class="sh_ruby"><code>assert_not_nil( obj, [msg] )</code></pre>
+
+<p>Ensures that obj.nil? is false.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/6">
+<pre class="sh_ruby"><code>assert_match( regexp, string, [msg] )</code></pre>
+
+<p>Ensures that a string matches the regular expression.
+&#x2028;</p>
+
+<pre class="sh_ruby"><code>assert_no_match( regexp, string, [msg] )</code></pre>
+
+<p>Ensures that a string doesn&#x2019;t match the regular expression.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/02_assertions/7">
+<pre class="sh_ruby"><code>assert_in_delta( expecting, actual, delta, [msg] )</code></pre>
+
+<p>Ensures that the numbers expecting and actual are within delta of each other.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/8">
+<pre class="sh_ruby"><code>assert_throws( symbol, [msg] ) {
+  block
+}</code></pre>
+
+<p>Ensures that the given block throws the symbol.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/9">
+<pre class="sh_ruby"><code>assert_raise( exception1, ... ) {
+  block
+}</code></pre>
+
+<p>Ensures that the given block raises one of the given exceptions.
+&#x2028;</p>
+
+<pre class="sh_ruby"><code>assert_nothing_raised( exception1, ... ) {
+  block
+}</code></pre>
+
+<p>Ensures that the given block doesn&#x2019;t raise one of the given exceptions.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/10">
+<pre class="sh_ruby"><code>assert_instance_of( class, obj, [msg] )</code></pre>
+
+<p>Ensures that obj is of the class type.
+&#x2028;</p>
+
+<pre class="sh_ruby"><code>assert_kind_of( class, obj, [msg] )</code></pre>
+
+<p>Ensures that obj is or descends from class.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/11">
+<pre class="sh_ruby"><code>assert_respond_to( obj, symbol, [msg] )</code></pre>
+
+<p>Ensures that obj has a method called symbol.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/02_assertions/12">
+<pre class="sh_ruby"><code>assert_operator( obj1, operator, obj2, [msg] )</code></pre>
+
+<p>Ensures that obj1.operator(obj2) is true.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/13">
+<pre class="sh_ruby"><code>assert_send( array, [msg] )</code></pre>
+
+<p>Ensures that executing the method listed in array[1] on the object in array[0] with the parameters of array[2 and up] is true. This one is weird eh?
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/02_assertions/14">
+<pre class="sh_ruby"><code>flunk( [msg] )</code></pre>
+
+<p>Ensures failure. This is useful to explicitly mark a test that isn&#x2019;t finished yet.
+&#x2028;</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="content/03_types">
+<h1>Types of Tests</h1>
+
+<ul>
+<li>Unit (little stuff)</li>
+<li>Functional (big stuff)</li>
+<li>Integration (lots of stuff)</li>
+<li>And more! Performance, Behavioral, etc...</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/04_unit/1">
+<h1>Unit Testing</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/04_unit/2">
+<pre class="sh_ruby"><code>def first_name(name)
+  name.split(" ").first
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/3">
+<pre class="sh_ruby"><code>def first_name(name)
+  name.split(" ").first
+end
+
+test "first name" do
+  assert_equal "John", first_name("John Doe")
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/4">
+<pre class="sh_ruby"><code>def first_name(name)
+  name.split(" ").first
+end
+
+test "first name" do
+  assert_equal "John", first_name("John Doe")
+  assert_instance_of String, first_name("John Doe")
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/5">
+<pre class="sh_ruby"><code>def first_name(name)
+  name.split(" ").first
+end
+
+test "return first name" do
+  assert_equal "John", first_name("John Doe")
+end
+
+test "return a string" do
+  assert_instance_of String, first_name("John Doe")
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/6">
+<pre class="sh_ruby"><code>def first_name(name)
+  name.split(" ").first
+end
+
+test "return first name" do
+  assert_equal "Jane", first_name("Jane Doe")
+  assert_equal "John", first_name("John Doe")
+  assert_equal "Nice", first_name("Mr. Nice Guy")
+end
+
+test "return a string" do
+  assert_instance_of String, first_name("John Doe")
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/7">
+<pre class="sh_shell"><code>Failure:
+test: return first name [dir/file_test:123]:
+&lt;"Nice"&gt; expected but was &lt;"Mr."&gt;</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/8">
+<pre class="sh_ruby"><code>test "strip Mr. from the name" do
+  assert_equal "John", first_name("Mr. John Doe")
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/9">
+<pre class="sh_ruby"><code>def first_name(name)
+  name.gsub! /^Mr\.\s/, ''
+  name.split(" ").first
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/10">
+<pre class="sh_ruby"><code>test "strip Mr. from the name" do
+  assert_equal "John", first_name("Mr. John Doe")
+end
+
+test "strip Mrs. from the name" do
+  assert_equal "Jane", first_name("Mrs. Jane Doe")
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/11">
+<pre class="sh_ruby"><code>def first_name(name)
+  name.gsub! /^Mr(s\.*)\s/, ''
+  name.split(" ").first
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/12">
+<pre class="sh_ruby"><code>test "strip the honorific from the name" do
+  assert_equal "John", first_name("Mr. John Doe")
+  assert_equal "Jane", first_name("Mrs. Jane Doe")
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/04_unit/13">
+<pre class="sh_ruby"><code>test "return first name" do
+  assert_equal "John", first_name("John Doe")
+end
+
+test "strip the honorific from the name" do
+  assert_equal "John", first_name("Mr. John Doe")
+  assert_equal "Jane", first_name("Mrs. Jane Doe")
+end
+
+test "return a string" do
+  assert_instance_of String, first_name("John Doe")
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/05_pretty/1">
+<h1>Making it Pretty</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/05_pretty/2">
+<h1>Pretty Context</h1>
+
+<pre class="sh_ruby"><code>describe "object" do
+  test "do something" do
+    assert something
+  end
+
+  test "do something else" do
+    assert something(else)
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="content/05_pretty/3">
+<h1>Pretty Context</h1>
+
+<ul>
+<li>Describe object</li>
+<li>test == should</li>
+<li>"do this thing"</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/05_pretty/4">
+<h1>Pretty Context</h1>
+
+<pre class="sh_ruby"><code>context "object" do
+  should "do something" do
+    assert something
+  end
+
+  should "do something else" do
+    assert something(else)
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/05_pretty/5">
+<h1>Pretty Syntax</h1>
+
+<pre class="sh_ruby"><code># user_test.rb
+class UserTest &lt; Test::Unit::TestCase
+  context "age" do
+    should "return a fixnum" do
+      assert_instance_of Fixnum,
+                         User.first.age
+    end
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/05_pretty/6">
+<h1>Pretty Failures</h1>
+
+<pre class="sh_shell"><code>Failure:
+test: age should return a fixnum.
+  (UserTest) [user_test.rb:4]
+Expected "age" to be an instance of
+  Fixnum, not String.</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/05_pretty/7">
+<h1>Code Reuse</h1>
+
+<pre class="sh_ruby"><code># user_test.rb
+class UserTest &lt; Test::Unit::TestCase
+  context "age" do
+    setup do
+      @user = User.first
+    end
+
+    should "return a fixnum" do
+      assert_instance_of Fixnum, @user
+    end
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/05_pretty/8">
+<pre class="sh_ruby"><code>context "first name" do
+  setup do
+    @john     = first_name "John Doe"
+    @mr_john  = first_name "Mr. John Doe"
+    @mrs_jane = first_name "Mrs. Jane Doe"
+  end
+
+  should "return the first name" do
+    assert_equal "John", @john
+  end
+
+  should "strip the honorific from the name" do
+    assert_equal "John", @mr_john
+    assert_equal "Jane", @mrs_jane
+  end
+
+  should "return a string" do
+    assert_instance_of String, @john
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/06_functional/1">
+<h1>Functional Testing</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/06_functional/2">
+<h1>Functional Testing</h1>
+
+<p>(for websites)</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/06_functional/3">
+<pre class="sh_ruby"><code>test "should get index" do
+  get "/index"
+  assert_response 200
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/06_functional/4">
+<pre class="sh_ruby"><code>test "should get index" do
+  get "/index"
+  assert_response 200
+  assert_select "h1", "OurCompany"
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/06_functional/5">
+<pre class="sh_ruby"><code>test "should post contact form" do
+  post "/contact", :post =&gt; {
+    :email =&gt; "john@doe.com",
+    :message =&gt; "I really like your site"
+  }
+
+  assert_response 201
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/06_functional/6">
+<pre class="sh_ruby"><code>test "should validate email" do
+  post "/contact", :post =&gt; {
+    :email =&gt; "jo@hn@do@e.com",
+    :message =&gt; "I really like your site"
+  }
+
+  assert_response 406
+  assert_select ".error", "Invalid email"
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/07_integration/1">
+<h1>Integration</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/07_integration/2">
+<pre class="sh_ruby"><code>test "login and browse site" do
+  get "/login"
+  assert_response :success
+
+  post_via_redirect "/login",
+                    :username =&gt; "joe",
+                    :password =&gt; "secret"
+
+  assert_equal '/welcome', path
+  assert_select "#username", "Welcome Joe!"
+
+  get "/secret/stuff"
+  assert_response :success
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/1">
+<h1>Code Quality</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/2">
+<h1>Schlep</h1>
+
+<p>github.com/Movitas/schlep-ruby</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/3">
+<pre class="sh_ruby"><code>def event(type, message)
+  envelope = {
+    :timestamp =&gt; Time.now.to_f,
+    :type =&gt;      type,
+    :message =&gt;   message.to_json
+  }.to_json
+
+  @redis.rpush 'schlep', envelope
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/4">
+<h1>Timestamp should be a Float</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/5">
+<pre class="sh_ruby"><code>context "timestamp" do
+  should "be a float" do
+    # ???
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/6">
+<pre class="sh_ruby"><code>def timestamp
+  Time.now.to_f
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/7">
+<pre class="sh_ruby"><code>def event(type, message)
+  envelope = {
+    :timestamp =&gt; timestamp,
+    :type =&gt;      type,
+    :message =&gt;   message.to_json
+  }.to_json
+
+  @redis.rpush 'schlep', envelope
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/8">
+<pre class="sh_ruby"><code>context "timestamp" do
+  should "be a float" do
+    assert_instance_of Float,
+                       Schlep.timestamp
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/9">
+<h1>Yay!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/10">
+<h1>Envelope should be valid JSON</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/11">
+<pre class="sh_ruby"><code>context "???" do
+  should "be valid json" do
+    # ???
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/12">
+<pre class="sh_ruby"><code>context "envelope" do
+  should "be valid json" do
+    assert_nothing_raised(Exception) {
+      JSON.parse(
+        Schlep.envelope "test_type",
+        { :one =&gt; { :two =&gt; 3 }}
+      )
+    }
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/13">
+<pre class="sh_ruby"><code>def envelope(type, message)
+  {
+    :timestamp =&gt; timestamp,
+    :type =&gt;      type,
+    :message =&gt;   message.to_json
+  }.to_json
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/14">
+<pre class="sh_ruby"><code>def event(type, message)
+  @redis.rpush 'schlep',
+               envelope(type, message)
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/15">
+<h1>Test-Driven Development!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/16">
+<pre class="sh_ruby"><code>:message =&gt; message.to_json</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/17">
+<h1>Message should be left alone if it's already valid JSON</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/08_quality/18">
+<pre class="sh_ruby"><code>context "serialize message" do
+  should "leave valid json alone" do
+    assert_equal "{\"one\":{\"two\":3}}",
+      Schlep.serialize_message("{\"one\":{\"two\":3}}")
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/19">
+<pre class="sh_ruby"><code>def serialize_message(message)
+  return message if message.is_a? String
+  message.to_json
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/20">
+<pre class="sh_ruby"><code>def envelope(type, message)
+  {
+    :timestamp =&gt; timestamp,
+    :type =&gt;      type,
+    :message =&gt;   serialize_message(message)
+  }.to_json
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/08_quality/21">
+<pre class="sh_ruby"><code>context "serialize message" do
+  should "leave valid json alone" do
+    assert_equal "{\"one\":{\"two\":3}}",
+      Schlep.serialize_message("{\"one\":{\"two\":3}}")
+  end
+
+  should "leave strings alone" do
+    assert_equal "test string",
+      Schlep.serialize_message("test string")
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/08_quality/22">
+<h1>Before &amp; After</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/08_quality/23">
+<pre class="sh_ruby"><code>def event(type, message)
+  # Creates an envelope
+  # Parses the message to JSON
+  # Parses the envelope to JSON
+  # Sends the event to Redis
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="content/08_quality/24">
+<pre class="sh_ruby"><code>def envelope(type, message)
+  # Creates an envelope and parses to JSON
+end
+
+def event(type, message)
+  # Sends an event
+end
+
+def serialize_message(message)
+  # Parses a message to valid JSON
+end
+
+def timestamp
+  # Returns a timestamp in the format we want
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/09_ci/1">
+<h1>Continuous Integration</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/09_ci/2">
+<h1>Continuous Integration</h1>
+
+<p>(CI)</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="content/09_ci/3">
+<h1>Continuous Integration</h1>
+
+<ul>
+<li>Server that runs your tests</li>
+<li>Has environment similar to production</li>
+<li>Triggered by Git commits</li>
+<li>Tells you when they fail</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="content/09_ci/4">
+<h1>Continuous Integration</h1>
+
+<ul>
+<li>Jimmy writes code and tests</li>
+<li>They pass (hopefully)</li>
+<li>He commits and pushes to a branch</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="content/09_ci/5">
+<h1>Continuous Integration</h1>
+
+<ul>
+<li>CI server pulls code down automagically</li>
+<li>Runs tests, they fail</li>
+<li>Packages up a pretty email and sends it out</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="content/09_ci/6">
+<h1>Continuous Integration</h1>
+
+<ul>
+<li>Someone fixes it (hopefully)</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="content/10_workflow/1">
+<h1>Workflow</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="content/10_workflow/2">
+<h1>TDD/Tests first?</h1>
+
+<ul>
+<li>Doesn't matter</li>
+<li>But don't commit without them</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="content/10_workflow/3">
+<h1>How do we test legacy code?</h1>
+
+<ul>
+<li>We don't...</li>
+<li>...except for bugfixes</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="content/10_workflow/4">
+<h1>Bugfixes</h1>
+
+<ul>
+<li>Create failing test that proves bug</li>
+<li>Fix bug</li>
+<li>Now that code has test coverage!</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="end/01_end/1">
+<h1>Questions?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="end/01_end/2">
+<h1>Thanks</h1>
+</div>
+</div></div>
+
+</body>
+</html>
