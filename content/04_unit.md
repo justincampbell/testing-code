@@ -101,7 +101,7 @@
 
     @@@ ruby
     def first_name(name)
-      name.gsub! /^Mr(s\.*)\s/, ''
+      name.gsub! /^Mr[s\.*]\s/, ''
       name.split(" ").first
     end
 
