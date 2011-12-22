@@ -1,0 +1,8 @@
+{
+    "name": "Testing Code",
+    "sections": [
+      { "section": "begin" },
+      { "section": "content" },
+      { "section": "end" }
+    ]
+}
